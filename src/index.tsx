@@ -24,6 +24,8 @@ import { ChatRecipientPicker, FriendListItem, FriendStatusCustomHook } from "./h
 import { Reducer, Reducer2, State } from "./hooks/StateVsReduser";
 import { ShowAlert } from "./hooksQuestion/ShowAlert";
 import { NG, OK } from "./hooksQuestion/NotSafeOrOK";
+import { NgHightFrequency, OkHightFrequency } from "./hooksQuestion/HightFrequency";
+import { UseMemoSample } from "./hooksQuestion/UseMemoSample";
 
 const ref = React.createRef<HTMLButtonElement>();
 
@@ -96,6 +98,11 @@ ReactDOM.render(
       <h3>依存の配列から関数を省略しても大丈夫ですか？</h3>
         <NG someProp={'NG'} /><br/>
         <OK someProp={'NG'} />
+      <h3>副作用の依存リストが頻繁に変わりすぎる場合はどうすればよいですか？</h3>
+        <NgHightFrequency />
+        <OkHightFrequency />
+      <h3>パフォーマンスのコツ</h3>
+        <UseMemoSample a={123} b={'bbb'}/>
     </details>
   </React.StrictMode>,
   document.getElementById("root")
