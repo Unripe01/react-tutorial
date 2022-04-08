@@ -31,6 +31,8 @@ it("changes value when clicked", () => {
   expect(button.innerHTML).toBe("Turn on");
 
   act(() => {
+    // 作成するそれぞれのイベントに対して { bubbles: true } を指定する必要があることに気を付けてください。
+    // React ではイベントは自動的にルート要素にデリゲートする形で処理されるためです。
     button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
   });
 
