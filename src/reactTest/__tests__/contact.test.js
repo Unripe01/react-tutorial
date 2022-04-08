@@ -4,6 +4,9 @@ import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 
 import { Contact } from "../contact";
+
+// 使われないのが正解！
+// eslint-disable-next-line no-unused-vars
 import MockedMap from "../map";
 
 console.log("ろぐろぐろぐ");
